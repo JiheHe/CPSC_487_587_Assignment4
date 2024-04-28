@@ -116,11 +116,11 @@
             for (let i = 0; i < joint.joint_num_dofs/2; i++) {  // 2 at a time
                 settings["dof"+joint.rotation_dof_idxs[i]] = 0;
                 // Cache the data
-                dof_to_range[joint.rotation_dof_idxs[i]] = [-2*Math.PI, 2*Math.PI]; // default for free rotate
+                dof_to_range[joint.rotation_dof_idxs[i]] = [-Math.PI, Math.PI]; // default for free rotate
 
                 settings["dof"+joint.translation_dof_idxs[i]] = 0;
                 // Cache the data
-                dof_to_range[joint.translation_dof_idxs[i]] = [-2, 2]; // default for free translate
+                dof_to_range[joint.translation_dof_idxs[i]] = [-1, 1]; // default for free translate
             }
         }
         else if (joint.joint_type_string !== "fixed") {
